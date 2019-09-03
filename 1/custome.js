@@ -72,8 +72,10 @@ var appData = {
    },
    chooseIncome: function() {
       let items = prompt('что принесет дополнительный доход?', '');
-      appData.income = items.split(', ');
-      appData.income.push(prompt('Может быть что то еще?'));
-      appData.income.sort();
+      if ((typeof(items)) === 'string' && items != '' && (typeof(items) != null)) {
+         appData.income = items.split(', ');
+         appData.income.push(prompt('Может быть что то еще?'));
+         appData.income.sort();
+      }      
    }
 }
