@@ -75,7 +75,16 @@ var appData = {
       if ((typeof(items)) === 'string' && items != '' && (typeof(items) != null)) {
          appData.income = items.split(', ');
          appData.income.push(prompt('Может быть что то еще?'));
-         appData.income.sort();
-      }      
+         appData.income.sort();        
+      } else {
+         alert("Вы ввели неверные данные!");
+      };
+      appData.income.forEach (function (itemmassive, i) {
+         alert("Способы доп. заработка: " + (i+1) + " - " + itemmassive);
+     });    
    }
+}
+
+for (let key in appData) {
+   console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
 }
